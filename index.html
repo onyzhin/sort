@@ -10,14 +10,16 @@
   </head>
   <body>
 	<div class="container"  ng-controller="sortCtrl">
-    <div class="row">
-       <div class="col-sm-6" ng-repeat="item in list" >
-          <div class="col-sm-1"  ng-repeat="i in item" >{{i}}</div> 
-          <div class="col-sm-12">
-            <button ng-click="sort($index)" class="btn btn-default">Sorting {{$index}}</button>
-          </div>
-       </div>
-     </div>
+    <table class="table table-bordered" ng-repeat="item in list" >
+      <tr>
+        <td ng-repeat="i in item" >{{i}}</td> 
+        <td>
+          <button ng-click="sortFilter($index)" class="btn btn-default">Sorting {{$index}} by sortFilter </button>
+          <button ng-click="sortFunc($index)" class="btn btn-default">Sorting {{$index}} by sortFunc</button>
+          <button ng-click="sortBubble($index)" class="btn btn-default">Sorting {{$index}} by sortBubble</button>
+        </td>
+      </tr>
+    </table>
 	</div>
   </body>
 </html>
